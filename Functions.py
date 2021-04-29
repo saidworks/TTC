@@ -14,14 +14,14 @@ def factorial(n):
     for i in range(1,n+1,1):
         factorial*=i
     return print(factorial)
-string=input("enter a word")
-letter=input("enter the letter you want to know its frequency")
+string=input("enter a word").lower()
+letter=input("enter the letter you want to know its frequency").lower()
 def count_string(string,letter):
-    index=0
+    times=0
     for index in range(len(string)):
         if string[index:index+1]==letter:
-            index+=1
+            times+=1
         else:
-            index+=0
-    return print("the letter occurred",index,"times")
+            times+=0
+    return print("the letter occurred",times,"times")
 count_string(string,letter)

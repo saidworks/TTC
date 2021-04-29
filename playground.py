@@ -1,0 +1,20 @@
+# #uses standard library documentation
+# import os
+# import datetime
+# access = os.path.getatime('/../../Tutorials')
+# print(datetime.timedelta(seconds=access))
+# #import package
+# from MyFirstPackage import ModuleA
+# string=input("enter a word").lower()
+# letter=input("enter the letter you want to know its frequency").lower()
+# ModuleA.count_string(string,letter)
+#
+# from MyFirstPackage.includes import ModuleB
+
+#list of functions in a package
+import numpy
+import matplotlib
+
+print(dir(matplotlib))
+help(matplotlib.LooseVersion())
+

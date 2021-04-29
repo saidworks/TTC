@@ -43,6 +43,7 @@ maxsofar=40
 numgooddates=0
 sumofmin=0
 sumofmax=0
+print(gooddata)
 #loop through all data
 for item in gooddata:
     numgooddates+=1
