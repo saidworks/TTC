@@ -13,8 +13,14 @@
 
 #list of functions in a package
 import numpy
-import matplotlib
-
-print(dir(matplotlib))
-help(matplotlib.LooseVersion())
-
+# import matplotlib
+#
+# print(dir(matplotlib))
+# help(matplotlib.LooseVersion())
+from random import choice
+board = [[[choice(['a','b','c','d']) for i in range(5)] for j in range(5)] for k in range(5)]
+print(board)
+for i in range(5):
+    for j in range(5):
+        board[i][j] = choice(['a','b','c','d'])
+print(board)

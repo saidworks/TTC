@@ -37,9 +37,32 @@ def DrawBoard():
         linetodraw += " |"
         print(linetodraw)
         print(" ---------------------------------")
+    print(' | a | b | c | d | e | f | g | h')
+    global score
+    print('current score:',score)
+
+#verify user entry 
+def IsValid(move):
+     #verify if the user entered an appropriate key 
+    cols = [ 'a' , 'b' ,'c' , 'd' , 'e' , 'f' , 'g' , 'h']
+    direction = ['u','d','l','r']
+    if len(move)==3 and int(move[1])<8:
+        for i in cols:
+            for j in direction:
+                if move.startswith(i):
+                    if move.endswith(j):
+                        return True
+    else:
+        return False
+
 def GetMove():
+    #instructions
+    print("Enter move by specifuing the space and the direction (u,d,l,r). Spaces should list column then row. \n For example, e3u would swap position e3 with the one above, and f7r would swap f7 to the right.")
+    
     #Get the move from the user
-    move = input("Enter move: ")
+    move = input("Enter a move : ")
+    while not IsValid(move):
+        move = input("Enter a move : ")
     return move
 def DoRound():
     #Perform one round of the game
@@ -109,7 +132,7 @@ def RemovePieces(board):
                 remove[i][j] = 1;
                 remove[i][j+1] = 1;
                 remove[i][j+2] = 1;
-            #Go through columns
+    #Go through columns
     for j in range(8):
         for i in range(6):
             if (board[i][j] == board[i+1][j]) and (board[i][j] == board[i+2][j]):
