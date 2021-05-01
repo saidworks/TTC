@@ -31,13 +31,13 @@ def DrawBoard():
     # Now draw rows from 8 down to 1
     for i in range(7, -1, -1):
     # Draw each row
-        linetodraw = ""
+        linetodraw = str(8-i) + ""
         for j in range(8):
             linetodraw += " | " + board[i][j]
         linetodraw += " |"
         print(linetodraw)
         print(" ---------------------------------")
-    print(' | a | b | c | d | e | f | g | h')
+    print('  | a | b | c | d | e | f | g | h |')
     global score
     print('current score:',score)
 
