@@ -24,3 +24,11 @@ for i in range(5):
     for j in range(5):
         board[i][j] = choice(['a','b','c','d'])
 print(board)
+
+import turtle
+Said = turtle.Turtle()
+Said.pendown()
+for i in range(100):
+    Said.forward(2*i)
+    Said.left(90)
+input()

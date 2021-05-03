@@ -44,7 +44,16 @@ def drawFive():
     drawSlash()
     shift_right()
     shift_right()
-#call functions
-startPos()
-for i in range(50):
-    drawFive()
+def drawTallies(n):
+    while(n>=5):
+        drawFive()
+        n = n-5
+    while(n>=1):
+        drawTally()
+        n = n - 1
+drawTallies(50)
+
+# #call functions
+# startPos()
+# for i in range(50):
+#     drawFive()

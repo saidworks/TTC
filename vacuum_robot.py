@@ -19,7 +19,7 @@ def sensor():
     #Too clsoe to bottom wall
         return True
     #Not too close to any
-        return False
+    return False
 
 def straightline():
     '''Move in a random direction until sensor is triggered'''
@@ -43,7 +43,7 @@ def spiral(gap = 20):
     #Change radius so that we will be out by 2*proximity after 360 degrees
         current_radius += gap*fraction
 
-def followwall():
+def followwall(min):
     '''Move turtle parallel to nearest wall for amount distance'''
     #find nearest wall and turn parallel to it
     min = xmax - position()[0]
@@ -82,4 +82,4 @@ while (True):
         backupspiral(random.randrange(100,200), random.
         randrange(10,50))
     if which_function == 'c':
-        followwall(random.randrange(100,500))
+        followwall(random.randrange(100,300))
