@@ -69,9 +69,26 @@ print(BinaryIn(favorite_foods, 'coconut'))
         a. find the index with the smallest value between i and maxindex
         b. swap that element with element index i
 '''
-cities_sorted = []
-for i in cities_list:
-    for j in cities_list:
-        if i<j and (i not in cities_sorted):
-            cities_sorted.append(i)
-print(cities_sorted)
+
+maxindex = len(cities_list) - 1
+minindex = None
+for i in range(0,maxindex + 1,1):
+    minindex = i
+    for j in range(0,maxindex+1,1):
+        if cities_list[j] < cities_list[minindex]:
+            minindex = j
+    temp = cities_list[i]
+    cities_list[i] = cities_list[minindex]
+    cities_list[minindex] = temp
+
+print(cities_list)
+''' *************************Insertion Sort *****************
+    compare each element to the next element
+    swap it to the start if it is smaller
+
+'''
+nums = [11,574,6,47,57,570,258]
+for i in range(len(nums)):
+    for j in range(len(nums)):
+        if nums[i]<nums[j]:
+            nums
