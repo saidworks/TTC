@@ -2,7 +2,7 @@
 # Search Algorithm 
 # =============================================================================
 import csv
-with open('world-cities_csv.csv','r',newline='') as cities:
+with open('world-cities_csv.csv','r',newline='', encoding="utf8") as cities:
     cities_reader = csv.reader(cities, delimiter=',')
     cities_list = []
     for row in cities_reader:
@@ -81,14 +81,18 @@ for i in range(0,maxindex + 1,1):
     cities_list[i] = cities_list[minindex]
     cities_list[minindex] = temp
 
-print(cities_list)
-''' *************************Insertion Sort *****************
-    compare each element to the next element
-    swap it to the start if it is smaller
+# print(cities_list)
+''' *************************Insertion Sort **************************
 
 '''
 nums = [11,574,6,47,57,570,258]
-for i in range(len(nums)):
-    for j in range(len(nums)):
-        if nums[i]<nums[j]:
-            nums
+def sortInsert(nums):
+    for i in range(len(nums)-1):
+        temp = nums[i]
+        j = i - 1
+        while j>0 and nums[j]>temp:
+            nums[j+1] = nums[j]
+            j = j - 1
+        nums[j+1] = temp
+    return nums
+print(sortInsert(nums))
