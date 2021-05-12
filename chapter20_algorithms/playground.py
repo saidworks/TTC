@@ -2,29 +2,35 @@
 # Search Algorithm 
 # =============================================================================
 import csv
-with open('world-cities_csv.csv','r',newline='', encoding="utf8") as cities:
+
+with open('world-cities_csv.csv', 'r', newline='', encoding="utf8") as cities:
     cities_reader = csv.reader(cities, delimiter=',')
     cities_list = []
     for row in cities_reader:
         cities_list.append(row[0])
+
+
 # =============================================================================
 # linear search : loop through elements 
 #   check if there is a match
 #       if there is a match return true
 #       else we move on
 # =============================================================================
-def isIn(list_items,item):
+def isIn(list_items, item):
     i = 0
     count = 0
-    while i<len(list_items):
+    while i < len(list_items):
         if item == list_items[i]:
             count += 1
             i += 1
         else:
             i += 1
     return f'{item} has been repeated {count} times'
-            
-print(isIn(cities_list,'Ankara'))
+
+
+print(isIn(cities_list, 'Ankara'))
+
+
 # =============================================================================
 # binary search : List of values in sorted order : L 
 # 1. set low  = 0 and high = length of list - 1
@@ -37,25 +43,26 @@ print(isIn(cities_list,'Ankara'))
 #   return false
 # =============================================================================
 # I need to order my list !!!
-def BinaryIn(L,v):
+def BinaryIn(L, v):
     if len(L) < 1:
         return False
     low = 0
     high = len(L) - 1
-    if L[low] == v :
+    if L[low] == v:
         return low
-    elif L[high] ==v:
+    elif L[high] == v:
         return high
-    while low < high -1:
+    while low < high - 1:
         midpoint = low + (high - low) // 2
         if L[midpoint] == v:
             return midpoint
-        elif L[midpoint] < v :
+        elif L[midpoint] < v:
             return low
         else:
             high = midpoint
 
     return False
+
 
 favorite_foods = ['barbeque', 'chicken and dumplings', 'gumbo', 'ice cream', 'pecan pie', 'pizza']
 print(BinaryIn(favorite_foods, 'gumbo'))
@@ -72,9 +79,9 @@ print(BinaryIn(favorite_foods, 'coconut'))
 
 maxindex = len(cities_list) - 1
 minindex = None
-for i in range(0,maxindex + 1,1):
+for i in range(0, maxindex + 1, 1):
     minindex = i
-    for j in range(0,maxindex+1,1):
+    for j in range(0, maxindex + 1, 1):
         if cities_list[j] < cities_list[minindex]:
             minindex = j
     temp = cities_list[i]
@@ -85,14 +92,18 @@ for i in range(0,maxindex + 1,1):
 ''' *************************Insertion Sort **************************
 
 '''
-nums = [11,574,6,47,57,570,258]
+nums = [11, 574, 6, 47, 57, 570, 258]
+
+
 def sortInsert(nums):
-    for i in range(len(nums)-1):
+    for i in range(len(nums) - 1):
         temp = nums[i]
         j = i - 1
-        while j>0 and nums[j]>temp:
-            nums[j+1] = nums[j]
+        while j >= 0 and nums[j] > temp:
+            nums[j + 1] = nums[j]
             j = j - 1
-        nums[j+1] = temp
+        nums[j + 1] = temp
     return nums
+
+
 print(sortInsert(nums))
