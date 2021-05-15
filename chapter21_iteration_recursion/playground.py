@@ -58,8 +58,8 @@ def quickSort(L):
     else:
         index = random.randint(0,len(L)//2)
         pivot = L[index]
-        L1 = [i for i in L if i<pivot]
-        L2 = [i for i in L if i>pivot]
+        L1 = [i for i in L if i < pivot]
+        L2 = [i for i in L if i > pivot]
     quickSort(L1)
     quickSort(L2)
     L = L1
@@ -67,3 +67,6 @@ def quickSort(L):
     L.extend(L2)
     return L
 print(quickSort(test))
+# to assess efficiency programmers use Asymptotic analysis
+    # it looks how the function performs as the input size grows larger and larger
+
