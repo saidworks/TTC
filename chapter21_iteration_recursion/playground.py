@@ -5,3 +5,4 @@ def countdown(n):
 
 countdown(6)
 
+# Divide and conquer => Taking one large data set and dividing it into subsets that we handle independently
