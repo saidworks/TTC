@@ -110,6 +110,7 @@
 # edges inside node class
 
 class node:
+    #variable intended for internal use => like private property
     def __init__(self, name,edges, population=0):
         self._name = name
         self._pop = population
